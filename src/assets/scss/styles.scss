@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap Icons. */
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+/* Importing NgSelect. */
+@import '@ng-select/ng-select/themes/default.theme.css';
+
+.pointer {
+	cursor: pointer;
+}

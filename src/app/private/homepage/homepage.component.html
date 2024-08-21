@@ -1,0 +1,129 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<h3 translate>Test.Modali</h3>
+		</div>
+		<div class="card-body">
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('avviso')">Test.Avviso</button>
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('conferma')">Test.Conferma</button>
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('input')">Test.Input</button>
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('input-multiplo')">Test.InputMultiplo</button>
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('errore')">Test.Errore</button>
+			<button translate class="btn btn-primary me-2 mt-2" (click)="openModal('upload-file')">Test.UploadFile</button>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header">
+			<h3 translate>Test.IconeBootstrap</h3>
+		</div>
+		<div class="card-body">
+			<div class="d-flex">
+				<i class="bi bi-alarm fs-4 me-3"></i>
+				<i class="bi bi-alarm-fill fs-4 me-3"></i>
+				<i class="bi text-primary bi-hand-thumbs-up fs-4 me-3"></i>
+				<i class="bi text-primary bi-hand-thumbs-up-fill fs-4 me-3"></i>
+				<i class="bi text-danger bi-hand-thumbs-down-fill fs-4 me-3"></i>
+				<i class="bi text-warning bi-check-lg fs-4 me-3"></i>
+				<i class="bi text-success bi-x-lg fs-4 me-3"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="card mt-3">
+		<div class="card-header">
+			<h3 translate>Test.SchemaColore</h3>
+		</div>
+		<div class="card-body">
+			<div class="d-flex">
+				<button translate="" class="btn btn-primary me-3" (click)="colorMode('dark')">Test.DarkMode</button>
+				<button translate="" class="btn btn-primary me-3" (click)="colorMode('light')">Test.LightMode</button>
+			</div>
+		</div>
+	</div>
+	<div class="card mt-3">
+		<div class="card-header">
+			<h3 translate>Test.HTTP</h3>
+		</div>
+		<div class="card-body">
+			<button class="btn btn-success me-2 mt-2" (click)="testHttp(200)">200</button>
+			<button class="btn btn-warning me-2 mt-2" (click)="testHttp(401)">401</button>
+			<button class="btn btn-warning me-2 mt-2" (click)="testHttp(403)">403</button>
+			<button class="btn btn-danger  me-2 mt-2" (click)="testHttp(409)">409</button>
+			<button class="btn btn-danger  me-2 mt-2" (click)="testHttp(500)">500</button>
+			<button class="btn btn-primary me-2 mt-2" (click)="testHttpResponse()">UUID</button>
+		</div>
+	</div>
+	<div class="card mt-3">
+		<div class="card-header">
+			<h3 translate>Test.Lingua</h3>
+		</div>
+		<div class="card-body">
+			<div class="d-flex">
+				<ng-select class="w-100" name="lingua" [ngModel]="linguaAttiva" (ngModelChange)="cambiaLingua($event)" [clearable]="false">
+					<ng-option value="it">
+						<i class="bi bi-flag-fill me-2"></i>
+						IT
+					</ng-option>
+					<ng-option value="en">
+						<i class="bi bi-flag-fill me-2"></i>
+						EN
+					</ng-option>
+				</ng-select>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header">
+			<h3 translate>Test.DirettivaTrascinabile</h3>
+		</div>
+		<div class="card-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th translate>Test.Nome</th>
+						<th translate>Test.Cognome</th>
+						<th translate>Test.Eta</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for (persona of persone; track $index) {
+						<tr [trascinabile]="$index" [(items)]="persone">
+							<td>{{persona.nome}}</td>
+							<td>{{persona.cognome}}</td>
+							<td>{{persona.eta}}</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="card mt-3">
+		<div class="card-header">
+			<h3 translate>&#64;defer</h3>
+		</div>
+		<div class="card-body">
+			@defer (when deferredContent) {
+				<img [src]="deferredContent" alt="Immagine" class="img-fluid" />
+			} @placeholder {
+				<button class="btn btn-primary" (click)="testGetImage()">Test.Carica</button>
+			} @loading {
+				<p translate>Test.Loading</p>
+			}
+		</div>
+	</div>
+
+	<div class="card" style="margin-top: 600px;">
+		<div class="card-header">
+			<h3 translate>&#64;defer viewport</h3>
+		</div>
+		<div class="card-body">
+			@defer (on viewport) {
+				<img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg" alt="" />
+			} @placeholder {
+				<p translate>Test.Loading</p>
+			}
+		</div>
+	</div>
+</div>

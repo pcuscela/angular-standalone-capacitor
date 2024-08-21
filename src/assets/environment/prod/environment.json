@@ -1,0 +1,13 @@
+{
+  "production": true,
+  "appVersion": "1.0",
+  "buildNumber": 100000,
+  "sentryDsn": "https://2d5544927f105fa79aa2315bb35f4e2c@o4507090121916416.ingest.de.sentry.io/4507538739363920",
+  "sentryNomeProgetto": "angular-standalone-capacitor",
+  "openTelemetryApiUrl": "https://monitoring.kedos-srl.it/collector",
+  "openTelemetryServiceName": "angular-standalone-capacitor",
+  "openTelemetryAttributes": "service=angular-standalone-capacitor,env=prod",
+  "apiUrl": "https://httpbin.org/?env=prod",
+  "destinatatrioInvioEmailSegnalazioniErrore": "segnalazioni@template.it",
+  "oggettoInvioEmailSegnalazioniErrore": "Segnalazione errore applicativo"
+}

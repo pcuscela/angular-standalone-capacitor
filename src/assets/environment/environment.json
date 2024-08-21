@@ -1,0 +1,13 @@
+{
+  "production": true,
+  "apiUrl": "https://httpbin.org/",
+  "appVersion": "",
+  "buildNumber": 0,
+  "sentryDsn": "",
+  "sentryNomeProgetto": "",
+  "openTelemetryApiUrl": "",
+  "openTelemetryServiceName": "",
+  "openTelemetryAttributes": "",
+  "destinatatrioInvioEmailSegnalazioniErrore": "segnalazioni@template.it",
+  "oggettoInvioEmailSegnalazioniErrore": "Segnalazione errore applicativo"
+}

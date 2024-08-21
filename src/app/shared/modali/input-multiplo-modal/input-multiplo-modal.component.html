@@ -1,0 +1,59 @@
+<form #form="ngForm" autocomplete="off">
+	<div class="modal-header border-0 py-2">
+		<h5 class="modal-title" translate>{{title}}</h5>
+		<i class="bi bi-x bi-lg fs-4 float-end ms-auto pointer" (click)="modal.close()"></i>
+	</div>
+	<div class="modal-body">
+		@for (input of inputs; track input) {
+			<div class="form-group mb-3">
+				<label class="label" [for]="input.id">
+					{{ input.label }}
+					@if (input.required) {
+						<span>*</span>
+					}
+				</label>
+				@if (input.type === 'text' || input.type === 'number' || !input.type) {
+					<input
+						[type]="input.type || 'text'"
+						class="form-control kd-input"
+						[class.required]="input.required"
+						[id]="input.id"
+						[disabled]="input.disabled || false"
+						[name]="input.id"
+						[placeholder]="input.placeholder || ''"
+						[(ngModel)]="input.value"
+						[required]="input.required || false" />
+				}
+				@if (input.type === 'textarea') {
+					<textarea
+						class="form-control kd-input"
+						[class.required]="input.required"
+						[id]="input.id"
+						[disabled]="input.disabled || false"
+						[name]="input.id"
+						[placeholder]="input.placeholder || ''"
+						[(ngModel)]="input.value"
+						[required]="input.required || false"></textarea>
+				}
+				@if (input.type === 'select') {
+					<ng-select
+						[class.required]="input.required"
+						[id]="input.id"
+						[disabled]="input.disabled || false"
+						[name]="input.id"
+						[placeholder]="input.placeholder || ''"
+						[(ngModel)]="input.value"
+						[required]="input.required || false"
+						[bindLabel]="'label'"
+						[bindValue]="'value'"
+						[items]="input.selectOptions!"></ng-select>
+				}
+			</div>
+		}
+
+		<div class="d-flex w-100 mt-4 justify-content-center">
+			<button type="button" class="btn btn-outline-primary" (click)="modal.close()" translate>{{close}}</button>
+			<button class="btn ms-3" [ngClass]="buttonClass" (click)="modal.close(inputs)" translate>{{button}}</button>
+		</div>
+	</div>
+</form>
