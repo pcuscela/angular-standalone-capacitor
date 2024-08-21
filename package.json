@@ -10,7 +10,6 @@
     "format": "prettier --log-level warn --write \"src/app/**/*.{html,ts}\"",
     "watch": "ng build --watch --configuration development",
     "extract-i18n": "ngx-translate-extract --input ./src --output ./src/assets/i18n/it.json ./src/assets/i18n/en.json --clean --sort --format namespaced-json",
-    "postbuild": "node postbuild.js",
     "-------": "--------",
     "app:build": "ng build --configuration development && npx cap sync",
     "app:build:prod": "ng build --configuration production && npx cap sync && node postbuild.js",
